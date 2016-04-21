@@ -1,8 +1,8 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router';
 
-import {ChampionsComponent} from './champions/champions.component';
-import {EuropaComponent} from './europa/europa.component';
+import {TeamsComponent} from './teams/teams.component';
+import {ChampComponent} from './champ/champ.component';
 import {NewTeamComponent} from './new-team/new-team.component';
 import {AppState} from './app.service';
 
@@ -10,24 +10,25 @@ import {AppState} from './app.service';
   selector: 'app',
   templateUrl: './app/app.html',
   directives: [ROUTER_DIRECTIVES],
-  providers: [ROUTER_PROVIDERS]
+  providers: [ROUTER_PROVIDERS],
+  styleUrls: ['./app/app.css']
 })
 
 @RouteConfig([
   {
     path: '/',
-    name: 'champions',
-    component: ChampionsComponent,
+    name: 'Teams',
+    component: TeamsComponent,
     useAsDefault: true
   },
   {
-    path: '/europa',
-    name: 'europa',
-    component: EuropaComponent
+    path: '/champ',
+    name: 'Champ',
+    component: ChampComponent
   },
   {
     path: '/new-team',
-    name: 'new-team',
+    name: 'NewTeam',
     component: NewTeamComponent
   }
 ])

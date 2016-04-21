@@ -6,7 +6,7 @@ import {
 
 import {TeamsProvider} from './teams.provider';
 
-describe('Champions provider', () => {
+describe('Teams provider', () => {
   beforeEachProviders(() => [
     TeamsProvider
   ]);
@@ -17,7 +17,7 @@ describe('Champions provider', () => {
   }));
 
   it('should have size more than 0', inject([ TeamsProvider ], (provider) => {
-    expect(provider.getData().length).toEqual(1);
+    expect(provider.getTeams().length).toEqual(5);
   }));
 
 });

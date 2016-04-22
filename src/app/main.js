@@ -1,20 +1,7 @@
-System.register(['angular2/platform/browser', './app.component'], function(exports_1, context_1) {
-    "use strict";
-    var __moduleName = context_1 && context_1.id;
-    var browser_1, app_component_1;
-    return {
-        setters:[
-            function (browser_1_1) {
-                browser_1 = browser_1_1;
-            },
-            function (app_component_1_1) {
-                app_component_1 = app_component_1_1;
-            }],
-        execute: function() {
-            browser_1.bootstrap(app_component_1.AppComponent);
-        }
-    }
-});
+var browser_1 = require('angular2/platform/browser');
+var app_1 = require('./app');
+var all_1 = require('ng2-material/all');
+browser_1.bootstrap(app_1.App, all_1.MATERIAL_PROVIDERS);
 /*
 Copyright 2016 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that

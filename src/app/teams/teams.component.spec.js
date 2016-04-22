@@ -1,4 +1,3 @@
-"use strict";
 var testing_1 = require('angular2/testing');
 testing_1.describe('Teas', function () {
     // provide our implementations or mocks to the dependency injector

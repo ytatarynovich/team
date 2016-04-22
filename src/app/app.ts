@@ -3,7 +3,7 @@ import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from 'angular2/router
 
 import {TeamsComponent} from './teams/teams.component';
 import {ChampComponent} from './champ/champ.component';
-import {NewTeamComponent} from './new-team/new-team.component';
+import {MatchDayComponent} from './match-day/match-day.component';
 import {AppState} from './app.service';
 
 @Component({
@@ -27,9 +27,9 @@ import {AppState} from './app.service';
     component: ChampComponent
   },
   {
-    path: '/new-team',
-    name: 'NewTeam',
-    component: NewTeamComponent
+    path: '/match-day',
+    name: 'MatchDay',
+    component: MatchDayComponent
   }
 ])
 

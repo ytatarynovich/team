@@ -1,0 +1,28 @@
+div.panel {
+    width: 350px;
+    margin: 10px;
+}
+
+.wrapper {
+    margin: 15px;
+}
+
+.image {
+    display: inline-block;
+}
+
+img, .image {
+    width: 31px;
+    height: 31px;
+    border-radius: 31px;
+}
+
+table {
+    width: 100%;
+}
+
+table>thead>tr>td,
+table>tbody>tr>td {
+    text-align: center;
+    vertical-align: middle;
+}

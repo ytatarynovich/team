@@ -6,13 +6,19 @@
           <thead>
             <tr>
               <td width=20>#</td>
-              <td width=150></td>
+              <td width=50>Logo</td>
+              <td width=150>Name</td>
               <td width=100></td>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="#team of teams; #i=index">
               <td>{{i + 1}}</td>
+              <td>
+                <div class="image">
+                  <img src="{{getTeamLogo(team.id)}}"/>
+                </div>
+              </td>
               <td>{{team.name}}</td>
               <td></td>
             </tr>

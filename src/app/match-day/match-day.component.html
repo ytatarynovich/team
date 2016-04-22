@@ -1,0 +1,74 @@
+<span><b>Match Day: {{day}}</b></span>
+<select class="form-control match-day" (change)="onChange($event.target.value)" >
+    <option *ngFor="#d of days">{{d}}</option>
+</select>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <table class="table table-stripped table-bordered">
+            <thead>
+                <tr>
+                    <td width=20>#</td>
+                    <td width=50></td>
+                    <td width=150></td>
+                    <td width=85></td>
+                    <td width=85></td>
+                    <td width=50></td>
+                    <td width=150></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="#match of matches; #i=index">
+                    <td>{{i + 1}}</td>
+                    <td>
+                        <div class="image">
+                            <img *ngIf="match.home" src="{{getTeamLogo(match.home)}}"/>
+                        </div>
+                    </td>
+                    <td>{{getTeamName(match.home)}}</td>
+                    <td>{{match.score.home}}</td>
+                    <td>{{match.score.guest}}</td>
+                    <td>
+                        <div class="image">
+                            <img *ngIf="match.guest" src="{{getTeamLogo(match.guest)}}"/>
+                        </div>
+                    </td>
+                    <td>{{getTeamName(match.guest)}}</td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn btn-sm" (click)="saveMatch()">SAVE</button>
+                    </td>
+                    <td>
+                        <div class="image">
+                            <img *ngIf="match.home" src="{{getTeamLogo(match.home)}}"/>
+                        </div>
+                    </td>
+                    <td>
+                        <select class="form-control" [(ngModel)]="match.home">
+                            <option *ngFor="#homeTeam of teams" [value]="homeTeam.id">{{homeTeam.name}}</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input class="form-control" required type="number"
+                               [(ngModel)]="match.score.home" min="0" max="9" step="1"/>
+                    </td>
+                    <td>
+                        <input class="form-control" required type="number"
+                               [(ngModel)]="match.score.guest" min="0" max="9" step="1"/>
+                    </td>
+                    <td>
+                        <div class="image">
+                            <img *ngIf="match.guest" src="{{getTeamLogo(match.guest)}}"/>
+                        </div>
+                    </td>
+                    <td>
+                        <select class="form-control" [(ngModel)]="match.guest">
+                            <option *ngFor="#guestTeam of teams" [value]="guestTeam.id">{{guestTeam.name}}</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

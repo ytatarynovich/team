@@ -1,1 +1,26 @@
-<div>Coffees</div>
+<div class="wrapper">
+    <table class="table table-stripped table-bordered">
+        <thead>
+            <tr>
+                <td width=20>#</td>
+                <td *ngFor="#team of teams; #i=index">
+                    <div class="image">
+                        <img src="{{getTeamLogo(team.id)}}"/>
+                    </div>
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="#team of teams; #i=index">
+            <td>
+                <div class="image">
+                    <img src="{{getTeamLogo(team.id)}}"/>
+                </div>
+            </td>
+            <td *ngFor="#team of teams; #i=index">
+                1
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

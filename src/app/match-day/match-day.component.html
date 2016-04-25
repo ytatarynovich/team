@@ -1,7 +1,9 @@
-<span><b>Match Day: {{day}}</b></span>
-<select class="form-control match-day" (change)="onChange($event.target.value)" >
-    <option *ngFor="#d of days">{{d}}</option>
-</select>
+<div class="day-header">
+  <span><b>Match Day: {{day}}</b></span>
+  <select class="form-control match-day" (change)="onChange(selectedDay.value)" #selectedDay>
+      <option *ngFor="#d of days">{{d}}</option>
+  </select>
+</div>
 
 <div class="panel panel-default">
     <div class="panel-body">

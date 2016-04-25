@@ -1,1 +1,1 @@
-{"version":3,"file":"team.js","sourceRoot":"","sources":["team.ts"],"names":["Team","Team.constructor"],"mappings":"AAAA;IACEA;IACAC,CAACA;IACHD,WAACA;AAADA,CAACA,AAHD,IAGC;AAHY,YAAI,OAGhB,CAAA"}
+{"version":3,"file":"team.js","sourceRoot":"","sources":["team.ts"],"names":[],"mappings":";AAAA;IAKE,cAAY,EAAE,EAAE,IAAI;QAClB,IAAI,CAAC,EAAE,GAAG,EAAE,CAAC;QACb,IAAI,CAAC,IAAI,GAAG,IAAI,CAAC;IACnB,CAAC;IACH,WAAC;AAAD,CAAC,AATD,IASC;AATY,YAAI,OAShB,CAAA"}

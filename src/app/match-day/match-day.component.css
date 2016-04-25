@@ -1,5 +1,5 @@
 div.panel {
-    /*width: 350px;*/
+    width: 600px;
     margin: 10px;
 }
 
@@ -9,12 +9,20 @@ img, .image {
     border-radius: 30px;
 }
 
+.match-day {
+  width: 80px;
+}
+
 table {
-    width: 100%;
+    width: 570px;
 }
 
 table>thead>tr>td,
 table>tbody>tr>td {
     text-align: center;
     vertical-align: middle;
+}
+
+.day-header {
+  margin-left: 10px;
 }

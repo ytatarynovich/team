@@ -1,13 +1,9 @@
+"use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") return Reflect.decorate(decorators, target, key, desc);
-    switch (arguments.length) {
-        case 2: return decorators.reduceRight(function(o, d) { return (d && d(o)) || o; }, target);
-        case 3: return decorators.reduceRight(function(o, d) { return (d && d(target, key)), void 0; }, void 0);
-        case 4: return decorators.reduceRight(function(o, d) { return (d && d(target, key, o)) || o; }, desc);
-    }
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require('angular2/core');
 var teams_provider_1 = require('../teams/services/teams.provider');
@@ -19,20 +15,27 @@ var MatchDayComponent = (function () {
         for (var i = 1; i <= 30; i++) {
             this.days.push(i);
         }
-        this.score = {};
         this.teams = provider.getTeams();
         this.match = new match_1.Match();
+        this.match.home = this.teams[0].id;
+        this.match.guest = this.teams[1].id;
         this.matches = [];
     }
     MatchDayComponent.prototype.onChange = function (day) { this.day = day; };
-    MatchDayComponent.prototype.onHomeChange = function (team) { this.homeTeam = team; };
-    MatchDayComponent.prototype.onGuestChange = function (team) { this.guestTeam = team; };
     MatchDayComponent.prototype.saveMatch = function () {
         this.matches.push(this.match);
+        var homeTeam = this.provider.findById(parseInt(this.match.home));
+        var guestTeam = this.provider.findById(parseInt(this.match.guest));
+        this.teams = _.without(this.teams, homeTeam);
+        this.teams = _.without(this.teams, guestTeam);
         this.match = new match_1.Match();
     };
     MatchDayComponent.prototype.getTeamLogo = function (id) {
-        return "./assets/icon/" + id + ".jpg";
+        return this.provider.getTeamLogo(id);
+    };
+    MatchDayComponent.prototype.getTeamName = function (id) {
+        var team = this.provider.findById(parseInt(id));
+        return team.name;
     };
     MatchDayComponent = __decorate([
         core_1.Component({
@@ -40,10 +43,9 @@ var MatchDayComponent = (function () {
             templateUrl: './app/match-day/match-day.component.html',
             styleUrls: ['./app/match-day/match-day.component.css'],
             providers: [teams_provider_1.TeamsProvider]
-        }), 
-        __metadata('design:paramtypes', [teams_provider_1.TeamsProvider])
+        })
     ], MatchDayComponent);
     return MatchDayComponent;
-})();
+}());
 exports.MatchDayComponent = MatchDayComponent;
 //# sourceMappingURL=match-day.component.js.map

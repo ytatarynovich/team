@@ -1,1 +1,1 @@
-{"version":3,"file":"match.js","sourceRoot":"","sources":["match.ts"],"names":["Match","Match.constructor"],"mappings":"AAEA;IAKIA;QACIC,IAAIA,CAACA,KAAKA,GAAGA,EAAEA,IAAIA,EAAGA,CAACA,EAAEA,KAAKA,EAAGA,CAACA,EAAEA,CAACA;IACzCA,CAACA;IACLD,YAACA;AAADA,CAACA,AARD,IAQC;AARY,aAAK,QAQjB,CAAA"}
+{"version":3,"file":"match.js","sourceRoot":"","sources":["match.ts"],"names":[],"mappings":";AAEA;IAKI;QACI,IAAI,CAAC,KAAK,GAAG,EAAE,IAAI,EAAG,CAAC,EAAE,KAAK,EAAG,CAAC,EAAE,CAAC;IACzC,CAAC;IACL,YAAC;AAAD,CAAC,AARD,IAQC;AARY,aAAK,QAQjB,CAAA"}

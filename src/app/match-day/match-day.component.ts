@@ -14,7 +14,6 @@ export class MatchDayComponent {
   days: number[];
   day: number;
   teams: Team[];
-  score: any;
   homeTeam: Team;
   guestTeam: Team;
   matches: Match[];
@@ -25,19 +24,22 @@ export class MatchDayComponent {
     for(let i = 1; i <= 30; i++) {
       this.days.push(i);
     }
-    this.score = {};
     this.teams = provider.getTeams();
     this.match = new Match();
+    this.match.home = this.teams[0].id;
+    this.match.guest = this.teams[1].id;
     this.matches = [];
   }
 
   onChange(day) { this.day = day; }
-  onHomeChange(team) { this.homeTeam = team; }
-  onGuestChange(team) { this.guestTeam = team; }
 
   saveMatch() {
     this.matches.push(this.match)
 
+    var homeTeam = this.provider.findById(parseInt(this.match.home));
+    var guestTeam = this.provider.findById(parseInt(this.match.guest));
+    this.teams = _.without(this.teams, homeTeam);
+    this.teams = _.without(this.teams, guestTeam);
     this.match = new Match();
   }
 

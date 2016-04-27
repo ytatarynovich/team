@@ -2,12 +2,14 @@ import {Component} from 'angular2/core';
 import { TeamsProvider } from '../teams/services/teams.provider';
 import {Team} from '../team/team';
 import {Match} from '../match-day/match';
+import {TeamPipe} from '../team/pipes/team.pipe';
 
 @Component({
   selector: 'new-team',
   templateUrl: './app/match-day/match-day.component.html',
   styleUrls: ['./app/match-day/match-day.component.css'],
-  providers: [TeamsProvider]
+  providers: [TeamsProvider],
+  pipes: [TeamPipe]
 })
 
 export class MatchDayComponent {
@@ -50,5 +52,10 @@ export class MatchDayComponent {
   getTeamName(id) {
     var team = this.provider.findById(parseInt(id));
     return team.name;
+  }
+
+  checkTeam(team, id) {
+    if(!team) return false;
+    return team.id !== id;
   }
 }

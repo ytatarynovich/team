@@ -48,7 +48,7 @@
                     </td>
                     <td>
                         <select class="form-control" [(ngModel)]="match.home">
-                            <option *ngFor="#homeTeam of teams" [value]="homeTeam.id">{{homeTeam.name}}</option>
+                            <option *ngFor="#homeTeam of teams | teamPipe:match.guest" [value]="homeTeam.id">{{homeTeam.name}}</option>
                         </select>
                     </td>
                     <td>
@@ -66,7 +66,7 @@
                     </td>
                     <td>
                         <select class="form-control" [(ngModel)]="match.guest">
-                            <option *ngFor="#guestTeam of teams" [value]="guestTeam.id">{{guestTeam.name}}</option>
+                            <option *ngFor="#guestTeam of teams | teamPipe:match.home" [value]="guestTeam.id">{{guestTeam.name}}</option>
                         </select>
                     </td>
                 </tr>
